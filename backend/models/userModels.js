@@ -50,7 +50,7 @@ userSchema.methods.checkPass = async function (password, next) {
 };
 userSchema.methods.getToken = async function (next) {
   try {
-    return jwt.sign({ _id: this._id.toString() }, process.env.JWT_PASS, {
+    return jwt.sign({ _id: this._id}, process.env.JWT_PASS, {
       expiresIn: process.env.JWT_EXP,
     });
   } catch (error) {
