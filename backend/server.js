@@ -31,8 +31,8 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(cors({ origin: ["http://localhost:3000" , "https://myblog-gb42.onrender.com"], credentials: true }));
 
-app.use("/api/users", userRoute);
-app.use("/api/post", postRoute);
+app.use("/users", userRoute);
+app.use("/post", postRoute);
 
 
 app.use(errorMiddleWare);
