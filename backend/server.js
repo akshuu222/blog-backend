@@ -29,15 +29,11 @@ const app = express();
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000" , "https://myblog-gb42.onrender.com"], credentials: true }));
 
 app.use("/api/users", userRoute);
 app.use("/api/post", postRoute);
 
-app.use(express.static(path.join(path.resolve(), "./frontend/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(path.resolve(), "./frontend/build/index.html"));
-});
 
 app.use(errorMiddleWare);
 const server = app.listen(PORT, () => {
