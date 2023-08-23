@@ -4,7 +4,8 @@ const sendToken = async (user, res, status, message, next) => {
 
     const options = {
       httpOnly: true,
-      sameSite:"None",
+      sameSite:true,
+      secure:true,
       expires: new Date(
         Date.now() + Number(process.env.COOKIE_EXPIRE) * 24 * 60 * 60 * 1000
       ),
