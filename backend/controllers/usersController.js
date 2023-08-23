@@ -30,6 +30,8 @@ const logout = async (req, res, next) => {
   try {
     const options = {
       httpOnly: true,
+      sameSite: "none", 
+      secure:true,
       expires: new Date(0),
     };
     res.status(200)
@@ -41,3 +43,5 @@ const logout = async (req, res, next) => {
 };
 
 export { login, register , logout };
+
+
