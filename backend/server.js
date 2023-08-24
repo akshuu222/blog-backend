@@ -29,7 +29,7 @@ const app = express();
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-app.use(cors({ origin: ["http://localhost:3000" , "https://myblog-gb42.onrender.com"], credentials: true }));
+app.use(cors({ origin:"https://blog-app-api-vie7.onrender.com", credentials: true }));
 
 app.use("/users", userRoute);
 app.use("/post", postRoute);
